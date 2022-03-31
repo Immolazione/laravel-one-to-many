@@ -11,6 +11,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">slug</th>
                     <th scope="col">Creato il</th>
                     <th scope="col">Handle</th>
@@ -22,6 +23,12 @@
                   <tr>
                     <th scope="row">{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
+                    <td>
+                      @if($post->category)
+                      {{ $post->category->label }}
+                      @else - 
+                      @endif
+                    </td>
                     <td>{{ $post->slug }}</td>
                     <td>{{ $post->created_at }}</td>
                     <td class="d-flex justify-content-end align-items-center">
