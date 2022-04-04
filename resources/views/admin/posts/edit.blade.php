@@ -9,9 +9,16 @@
         <label for="description">Slug</label>
         <input type="text" name="slug" value="{{ $post->slug }}">
     </div>
-    <div class="form-row">
-        <label for="thumb">Creato il</label>
-        <input type="text" name="created_at" value="{{ $post->created_at }}">
+    <div>
+        <label for="category">Catogoria</label>
+        <select class="form-control" id="category" name="category_id">
+            <option value="">Nessuna categoria</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">
+                    {{ $category->label }}
+                </option>
+            @endforeach
+        </select>
     </div>
 
     <input type="submit" value="Invia">
