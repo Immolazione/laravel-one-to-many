@@ -45,9 +45,8 @@ class PostController extends Controller
 
         $post = new Post();
 
-        $post->title = $data['title'];
-        $post->slug = $data['slug'];
-        // $post->created_at = $data['created_at'];
+        
+        $post->fill($data);
 
         $post->save();
 
